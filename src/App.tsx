@@ -360,15 +360,35 @@ export default function App() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative order-1 lg:order-2 max-w-md mx-auto lg:max-w-none"
             >
-              <div className="aspect-square rounded-3xl bg-slate-200 overflow-hidden shadow-2xl relative z-10 border-8 border-white">
-                <img 
-                  src={profile.profileImage} 
-                  alt={profile.name}
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
+              <div className="relative z-10">
+                <div className="aspect-square rounded-full bg-slate-200 overflow-hidden shadow-2xl relative border-8 border-white">
+                  <img 
+                    src={profile.profileImage} 
+                    alt={profile.name}
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                
+                {/* Badge Pengalaman - Diposisikan agar tidak menghalangi wajah */}
+                <motion.div 
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.8 }}
+                  className="absolute -right-4 bottom-12 bg-white p-3 md:p-4 rounded-2xl shadow-2xl flex items-center gap-3 md:gap-4 border border-slate-100 z-20"
+                >
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-amber-100 rounded-xl flex items-center justify-center">
+                    <Trophy className="w-5 h-5 md:w-6 md:h-6 text-amber-600" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Pengalaman</p>
+                    <p className="text-base md:text-lg font-extrabold text-slate-900">7+ Tahun</p>
+                  </div>
+                </motion.div>
               </div>
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 md:w-32 md:h-32 bg-slate-900 rounded-2xl -z-0" />
+
+              {/* Elemen Dekoratif */}
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 md:w-32 md:h-32 bg-slate-900 rounded-full -z-0 opacity-10 blur-2xl" />
               <div className="absolute -top-6 -right-6 w-32 h-32 md:w-48 md:h-48 border-4 border-amber-200 rounded-full -z-0" />
             </motion.div>
           </div>
