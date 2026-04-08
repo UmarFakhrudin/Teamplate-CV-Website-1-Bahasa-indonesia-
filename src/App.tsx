@@ -182,22 +182,34 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-slate-100 overflow-hidden"
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-40 md:hidden bg-white overflow-hidden flex flex-col justify-center items-center"
           >
-            <div className="px-4 pt-2 pb-6 space-y-1">
+            <div className="px-4 py-8 space-y-6 text-center">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 text-base font-medium text-slate-700 hover:text-amber-600 hover:bg-slate-50 rounded-md"
+                  className="block text-3xl font-bold text-slate-900 hover:text-amber-600 transition-colors"
                 >
                   {link.name}
                 </a>
               ))}
+              <div className="pt-8 flex gap-6 justify-center">
+                <a href={profile.contact.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-slate-900 transition-colors">
+                  <Instagram className="w-8 h-8" />
+                </a>
+                <a href={profile.contact.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-slate-900 transition-colors">
+                  <Linkedin className="w-8 h-8" />
+                </a>
+                <a href={profile.contact.socials.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-slate-900 transition-colors">
+                  <Github className="w-8 h-8" />
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
@@ -278,41 +290,42 @@ export default function App() {
       <Navbar />
 
       {/* Hero Section */}
-      <header className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-        <div className="absolute top-0 right-0 -z-10 w-1/2 h-full bg-slate-100/50 skew-x-12 transform translate-x-1/4" />
+      <header className="relative pt-24 pb-16 md:pt-48 md:pb-32 overflow-hidden">
+        <div className="absolute top-0 right-0 -z-10 w-full md:w-1/2 h-full bg-slate-100/50 md:skew-x-12 transform md:translate-x-1/4" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
+              className="text-center lg:text-left order-2 lg:order-1"
             >
               <span className="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-xs font-bold tracking-wider uppercase mb-4">
                 Tersedia untuk Bekerja
               </span>
-              <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-slate-900 leading-tight mb-6 tracking-tight">
                 {profile.name}
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 font-medium mb-8">
+              <p className="text-lg md:text-2xl text-slate-600 font-medium mb-8 max-w-xl mx-auto lg:mx-0">
                 {profile.title}
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
                 <a 
                   href="#contact" 
-                  className="px-8 py-4 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-all shadow-lg shadow-slate-200"
+                  className="px-8 py-4 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-all shadow-lg shadow-slate-200 text-center"
                 >
                   Hubungi Saya
                 </a>
                 <a 
                   href="#resume" 
-                  className="px-8 py-4 bg-amber-600 text-white rounded-xl font-semibold hover:bg-amber-700 transition-all shadow-lg shadow-amber-200 flex items-center gap-2"
+                  className="px-8 py-4 bg-amber-600 text-white rounded-xl font-semibold hover:bg-amber-700 transition-all shadow-lg shadow-amber-200 flex items-center justify-center gap-2 text-center"
                 >
                   <FileText className="w-5 h-5" />
                   Unduh CV
                 </a>
               </div>
               
-              <div className="flex gap-4 mt-8">
+              <div className="flex justify-center lg:justify-start gap-4 mt-10">
                 <a 
                   href={profile.contact.socials.instagram} 
                   target="_blank" 
@@ -344,9 +357,9 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
+              className="relative order-1 lg:order-2 max-w-md mx-auto lg:max-w-none"
             >
-              <div className="aspect-square rounded-3xl bg-slate-200 overflow-hidden shadow-2xl relative z-10">
+              <div className="aspect-square rounded-3xl bg-slate-200 overflow-hidden shadow-2xl relative z-10 border-8 border-white">
                 <img 
                   src={profile.profileImage} 
                   alt={profile.name}
@@ -354,8 +367,8 @@ export default function App() {
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-slate-900 rounded-2xl -z-0 hidden md:block" />
-              <div className="absolute -top-6 -right-6 w-48 h-48 border-4 border-amber-200 rounded-full -z-0 hidden md:block" />
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 md:w-32 md:h-32 bg-slate-900 rounded-2xl -z-0" />
+              <div className="absolute -top-6 -right-6 w-32 h-32 md:w-48 md:h-48 border-4 border-amber-200 rounded-full -z-0" />
             </motion.div>
           </div>
         </div>
@@ -418,11 +431,11 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="bg-amber-600 p-8 rounded-3xl text-white">
+              <div className="bg-amber-600 p-6 md:p-8 rounded-3xl text-white">
                 <h3 className="text-xl font-bold mb-6">Hobi</h3>
-                <div className="flex gap-4">
+                <div className="grid grid-cols-2 gap-4">
                   {profile.hobbies.map((hobby) => (
-                    <div key={hobby.name} className="flex flex-col items-center gap-2 flex-1">
+                    <div key={hobby.name} className="flex flex-col items-center gap-2">
                       <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
                         {hobby.icon}
                       </div>
@@ -448,13 +461,13 @@ export default function App() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-4 rounded-3xl shadow-2xl border border-slate-100 max-w-4xl w-full"
+              className="bg-white p-2 md:p-4 rounded-3xl shadow-2xl border border-slate-100 max-w-4xl w-full"
             >
-              <div className="aspect-[1/1.414] bg-slate-100 rounded-2xl overflow-hidden relative group">
+              <div className="aspect-[1/1.414] md:aspect-[1/1.414] max-h-[70vh] md:max-h-none bg-slate-100 rounded-2xl overflow-hidden relative group">
                 <img 
                   src={profile.resumeImage} 
                   alt={`CV ${profile.name}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain md:object-cover"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
@@ -464,7 +477,7 @@ export default function App() {
                       e.preventDefault();
                       alert("Pengunduhan CV dimulai (Placeholder)");
                     }}
-                    className="px-8 py-4 bg-white text-slate-900 rounded-xl font-bold flex items-center gap-2 hover:scale-105 transition-transform"
+                    className="px-6 py-3 md:px-8 md:py-4 bg-white text-slate-900 rounded-xl font-bold flex items-center gap-2 hover:scale-105 transition-transform text-sm md:text-base"
                   >
                     <FileText className="w-5 h-5" />
                     Unduh PDF
@@ -473,10 +486,10 @@ export default function App() {
               </div>
             </motion.div>
             
-            <div className="mt-12 flex gap-4">
+            <div className="mt-8 md:mt-12 flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 sm:px-0">
               <button 
                 onClick={() => alert("Pengunduhan CV dimulai (Placeholder)")}
-                className="px-8 py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all flex items-center gap-2"
+                className="px-8 py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all flex items-center justify-center gap-2"
               >
                 <FileText className="w-5 h-5" />
                 Unduh CV (PDF)
@@ -493,7 +506,7 @@ export default function App() {
             Keahlian Saya
           </SectionHeading>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {profile.skills.map((skill, index) => (
               <motion.div
                 key={skill.name}
@@ -540,9 +553,9 @@ export default function App() {
             Pengalaman Kerja
           </SectionHeading>
 
-          <div className="relative space-y-12">
+          <div className="relative space-y-8 md:space-y-12">
             {/* Timeline line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-slate-200 transform -translate-x-1/2 hidden md:block" />
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-slate-200 transform md:-translate-x-1/2" />
             
             {profile.experience.map((exp, index) => (
               <motion.div
@@ -554,29 +567,32 @@ export default function App() {
                 className={`relative flex flex-col md:flex-row gap-8 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 top-0 w-4 h-4 bg-amber-600 rounded-full border-4 border-white transform -translate-x-1/2 z-10 hidden md:block" />
+                <div className="absolute left-4 md:left-1/2 top-0 w-4 h-4 bg-amber-600 rounded-full border-4 border-white transform -translate-x-1/2 z-10" />
                 
-                <div className="md:w-1/2">
-                  <div className={`bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:shadow-xl hover:shadow-slate-100 transition-all ${index % 2 === 0 ? 'md:ml-8' : 'md:mr-8'}`}>
+                <div className="pl-10 md:pl-0 md:w-1/2">
+                  <div className={`bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100 hover:shadow-xl hover:shadow-slate-100 transition-all ${index % 2 === 0 ? 'md:ml-8' : 'md:mr-8'}`}>
                     <div className="flex flex-wrap justify-between items-start gap-4 mb-4">
                       <div>
                         <span className="text-amber-600 font-bold text-sm uppercase tracking-wider">{exp.period}</span>
-                        <h3 className="text-2xl font-bold text-slate-900 mt-1">{exp.role}</h3>
-                        <div className="flex items-center gap-2 text-slate-500 font-medium mt-1">
-                          <Briefcase className="w-4 h-4" />
-                          <span>{exp.company}</span>
-                          <span className="text-slate-300">•</span>
-                          <MapPin className="w-4 h-4" />
-                          <span>{exp.location}</span>
+                        <h3 className="text-xl md:text-2xl font-bold text-slate-900 mt-1">{exp.role}</h3>
+                        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-slate-500 font-medium mt-1 text-sm">
+                          <div className="flex items-center gap-1">
+                            <Briefcase className="w-4 h-4" />
+                            <span>{exp.company}</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <MapPin className="w-4 h-4" />
+                            <span>{exp.location}</span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <p className="text-slate-600 leading-relaxed">
+                    <p className="text-slate-600 leading-relaxed text-sm md:text-base">
                       {exp.description}
                     </p>
                   </div>
                 </div>
-                <div className="md:w-1/2" />
+                <div className="hidden md:block md:w-1/2" />
               </motion.div>
             ))}
           </div>
@@ -586,13 +602,13 @@ export default function App() {
       {/* Education Section */}
       <section id="education" className="py-20 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
+          <div className="mb-12 text-center md:text-left">
             <h2 className="text-3xl md:text-4xl font-bold mb-2">Pendidikan</h2>
             <p className="text-slate-400">Latar belakang akademik dan kualifikasi saya.</p>
-            <div className="h-1.5 w-16 bg-amber-600 mt-4 rounded-full" />
+            <div className="h-1.5 w-16 bg-amber-600 mt-4 rounded-full mx-auto md:mx-0" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {profile.education.map((edu, index) => (
               <motion.div
                 key={edu.school}
