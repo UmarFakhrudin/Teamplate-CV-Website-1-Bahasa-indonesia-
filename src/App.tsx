@@ -317,7 +317,8 @@ export default function App() {
                   Hubungi Saya
                 </a>
                 <a 
-                  href="#resume" 
+                  href={profile.resumeImage}
+                  download={`CV_${profile.name.replace(/\s+/g, '_')}.jpg`}
                   className="px-8 py-4 bg-amber-600 text-white rounded-xl font-semibold hover:bg-amber-700 transition-all shadow-lg shadow-amber-200 flex items-center justify-center gap-2 text-center"
                 >
                   <FileText className="w-5 h-5" />
@@ -450,51 +451,46 @@ export default function App() {
       </section>
 
       {/* Resume Section */}
-      <section id="resume" className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading subtitle="Lihat dan unduh resume profesional lengkap saya.">
-            Resume Saya
-          </SectionHeading>
-          
-          <div className="flex flex-col items-center">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+      <section id="resume" className="py-20 bg-slate-900 text-white overflow-hidden relative">
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-amber-600 rounded-full blur-[120px]" />
+          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-amber-600 rounded-full blur-[120px]" />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[3rem] p-8 md:p-16 text-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="bg-white p-2 md:p-4 rounded-3xl shadow-2xl border border-slate-100 max-w-4xl w-full"
+              className="max-w-2xl mx-auto"
             >
-              <div className="aspect-[1/1.414] md:aspect-[1/1.414] max-h-[70vh] md:max-h-none bg-slate-100 rounded-2xl overflow-hidden relative group">
-                <img 
-                  src={profile.resumeImage} 
-                  alt={`CV ${profile.name}`}
-                  className="w-full h-full object-contain md:object-cover"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
-                  <a 
-                    href="#" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      alert("Pengunduhan CV dimulai (Placeholder)");
-                    }}
-                    className="px-6 py-3 md:px-8 md:py-4 bg-white text-slate-900 rounded-xl font-bold flex items-center gap-2 hover:scale-105 transition-transform text-sm md:text-base"
-                  >
-                    <FileText className="w-5 h-5" />
-                    Unduh PDF
-                  </a>
-                </div>
+              <div className="w-20 h-20 bg-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg shadow-amber-600/20">
+                <FileText className="w-10 h-10 text-white" />
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">Siap untuk Bekerja Bersama?</h2>
+              <p className="text-slate-400 text-lg mb-10">
+                Unduh resume lengkap saya untuk melihat detail kualifikasi, pengalaman, dan keahlian yang saya miliki dalam format yang siap cetak.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href={profile.resumeImage}
+                  download={`CV_${profile.name.replace(/\s+/g, '_')}.jpg`}
+                  className="px-10 py-5 bg-amber-600 text-white rounded-2xl font-bold hover:bg-amber-700 transition-all flex items-center justify-center gap-3 shadow-xl shadow-amber-600/20 text-lg"
+                >
+                  <FileText className="w-6 h-6" />
+                  Unduh Resume (JPG)
+                </a>
+                <a 
+                  href="#contact"
+                  className="px-10 py-5 bg-white text-slate-900 rounded-2xl font-bold hover:bg-slate-100 transition-all flex items-center justify-center gap-3 text-lg"
+                >
+                  <Mail className="w-6 h-6" />
+                  Hubungi Sekarang
+                </a>
               </div>
             </motion.div>
-            
-            <div className="mt-8 md:mt-12 flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 sm:px-0">
-              <button 
-                onClick={() => alert("Pengunduhan CV dimulai (Placeholder)")}
-                className="px-8 py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all flex items-center justify-center gap-2"
-              >
-                <FileText className="w-5 h-5" />
-                Unduh CV (PDF)
-              </button>
-            </div>
           </div>
         </div>
       </section>
