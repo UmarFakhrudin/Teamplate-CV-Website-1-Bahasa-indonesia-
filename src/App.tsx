@@ -29,85 +29,64 @@ import { motion, AnimatePresence } from 'motion/react';
 
 // --- Data ---
 const profile = {
-  name: "UMAR FAKHRUDIN",
+  name: "BUDI SANTOSO",
   title: "Copywriter & Desain Grafis",
-  summary: "Saya adalah lulusan Sekolah Menengah Kejuruan (SMK) jurusan Teknik Komputer dan Jaringan. Saya mahir dalam pengoperasian komputer dan menguasai Photoshop, Microsoft Word, Microsoft Excel, Microsoft PowerPoint, dll. Saya adalah orang yang sangat disiplin dalam mengatur waktu, mudah beradaptasi, percaya diri, dan mampu berkomunikasi dengan baik.",
+  summary: "Saya adalah seorang profesional kreatif dengan latar belakang pendidikan Desain Komunikasi Visual dari Universitas Indonesia. Saya memiliki keahlian mendalam dalam copywriting dan desain grafis, dengan pengalaman mengelola kampanye kreatif untuk berbagai brand. Saya adalah pribadi yang disiplin, inovatif, dan mampu bekerja secara kolaboratif dalam tim untuk mencapai target komunikasi yang efektif.",
   contact: {
-    phone: "0896-7666-8137",
-    email: "umar.fakhrudin17@gmail.com",
-    location: "Kec. Arjawinangun Kab. Cirebon",
+    phone: "0812-3456-7890",
+    email: "budi.santoso@example.com",
+    location: "Jl. Merdeka No. 123, Jakarta Pusat",
     socials: {
-      linkedin: "https://www.linkedin.com/in/umar-fakhrudin-9a5786268",
-      instagram: "https://www.instagram.com/FakhrudinUmar",
-      github: "https://github.com/UmarFakhrudin"
+      linkedin: "https://www.linkedin.com/in/budisantoso",
+      instagram: "https://www.instagram.com/budisantoso",
+      github: "https://github.com/budisantoso"
     }
   },
   profileImage: "/foto_saya.jpg",
   resumeImage: "/cv_saya.jpg",
   skills: [
     { name: "Adobe Photoshop", level: 90 },
-    { name: "Microsoft Word", level: 95 },
-    { name: "Microsoft Excel", level: 85 },
-    { name: "Instalasi Jaringan", level: 80 },
-    { name: "Desain Grafis", level: 88 }
+    { name: "Copywriting", level: 95 },
+    { name: "Desain Grafis", level: 88 },
+    { name: "Adobe Illustrator", level: 85 },
+    { name: "Content Strategy", level: 80 }
   ],
   experience: [
     {
-      company: "FLORIE X PINNATA STORE",
-      role: "Admin Back Office",
-      period: "2024 - Sekarang",
-      location: "Bayalangu",
-      description: "Bertanggung jawab atas Manajemen Inventaris & Stok (Kontrol Inventaris, Pemantauan Tanggal Kedaluwarsa, Administrasi Penjualan & Pembelian, Manajemen Data Produk, Koordinasi Operasional, Pelaporan, Logistik & Koordinasi Stok."
+      company: "Creative Agency Nusantara",
+      role: "Senior Copywriter",
+      period: "2022 - Sekarang",
+      location: "Jakarta Selatan",
+      description: "Mengembangkan konsep kreatif dan naskah iklan untuk berbagai kampanye digital dan media cetak klien besar. Berkolaborasi dengan tim kreatif untuk menghasilkan strategi komunikasi yang efektif."
     },
     {
-      company: "DEPO JAGO",
-      role: "Staff General Affair",
-      period: "2023 - 2024",
-      location: "Arjawinangun",
-      description: "Bertanggung jawab untuk mengelola seluruh operasional fasilitas kantor dan pengadaan aset perusahaan. Berpengalaman dalam mencapai efisiensi anggaran operasional, mengelola hubungan dengan vendor eksternal, dan memastikan seluruh aspek hukum dan keselamatan lingkungan kerja terpenuhi sesuai standar perusahaan."
+      company: "Digital Media Studio",
+      role: "Graphic Designer",
+      period: "2020 - 2022",
+      location: "Jakarta Barat",
+      description: "Merancang identitas visual, materi promosi media sosial, dan tata letak publikasi digital. Memastikan konsistensi brand di seluruh platform komunikasi visual."
     },
     {
-      company: "J&T EXPRESS CP",
-      role: "Leader / Shift Lead Collection Point",
-      period: "2020 - 2023",
-      location: "Tegalgubug",
-      description: "Mengawasi dan memantau alur kerja tim sesuai SOP, Memantau proses pemindaian barang untuk penerimaan dan pengiriman, Memantau pengiriman harian, mingguan, dan bulanan, Menginput alamat pengiriman barang atau surat, mencatat keuangan harian, mingguan, dan bulanan menggunakan sistem agen dan Microsoft Excel."
-    },
-    {
-      company: "POS EXPRESS INDONESIA",
-      role: "Sales Counter Officer",
-      period: "2019 - 2020",
-      location: "Tegalgubug",
-      description: "Menginput alamat pengiriman barang atau surat, mencatat keuangan harian, mingguan, dan bulanan menggunakan sistem agen dan Microsoft Excel."
-    },
-    {
-      company: "JNE EXPRES",
-      role: "Sales Counter Officer",
-      period: "2018 - 2019",
-      location: "Tegalgubug",
-      description: "Menginput alamat pengiriman barang atau surat, mencatat keuangan harian, mingguan, dan bulanan menggunakan sistem agen dan Microsoft Excel."
+      company: "Tech Startup Indonesia",
+      role: "Content Creator",
+      period: "2018 - 2020",
+      location: "Jakarta Pusat",
+      description: "Memproduksi konten visual dan tulisan yang menarik untuk meningkatkan engagement di berbagai platform media sosial. Menganalisis tren pasar untuk menciptakan konten yang relevan."
     }
   ],
   education: [
     {
-      school: "SMK PLUS AL-HILAL",
-      period: "2015 - 2018",
-      major: "Teknik Komputer dan Jaringan",
-      location: "Desa Tegalgubug, Kec. Arjawinangun Kab. Cirebon",
-      status: "Lulus dengan Baik"
+      school: "Universitas Indonesia",
+      period: "2014 - 2018",
+      major: "S1 Desain Komunikasi Visual",
+      location: "Depok, Jawa Barat",
+      status: "Lulus dengan Predikat Cum Laude"
     },
     {
-      school: "MTS AL-HILAL",
-      period: "2012 - 2015",
-      major: "Siswa",
-      location: "Desa Tegalgubug, Kec. Arjawinangun Kab. Cirebon",
-      status: "Lulus dengan Baik"
-    },
-    {
-      school: "MI NAHDLATUT TAIBIN",
-      period: "2006 - 2012",
-      major: "Siswa",
-      location: "Desa Majasri, Kec. Susukan Kab. Cirebon",
+      school: "SMA Negeri 1 Jakarta",
+      period: "2011 - 2014",
+      major: "Ilmu Pengetahuan Alam",
+      location: "Jakarta Pusat",
       status: "Lulus dengan Baik"
     }
   ],
@@ -153,7 +132,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             className="text-xl md:text-2xl font-bold text-slate-900 tracking-tighter"
           >
-            UMAR <span className="text-amber-600">FAKHRUDIN.</span>
+            {profile.name.split(' ')[0]} <span className="text-amber-600">{profile.name.split(' ').slice(1).join(' ')}.</span>
           </motion.div>
           
           {/* Desktop Nav */}
@@ -269,7 +248,7 @@ export default function App() {
     const { name, email, subject, message } = formData;
     
     // Construct the direct Gmail compose link
-    const body = `Halo Umar,%0D%0A%0D%0ANama: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0APesan:%0D%0A${message}`;
+    const body = `Halo ${profile.name},%0D%0A%0D%0ANama: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0APesan:%0D%0A${message}`;
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${profile.contact.email}&su=${encodeURIComponent(subject || 'Kontak dari Portfolio')}&body=${body}`;
     
     // Open Gmail in a new tab
@@ -358,10 +337,10 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative order-1 lg:order-2 max-w-md mx-auto lg:max-w-none"
+              className="relative order-1 lg:order-2 max-w-md mx-auto lg:max-w-none mb-16 lg:mb-0"
             >
               <div className="relative z-10">
-                <div className="aspect-square rounded-full bg-slate-200 overflow-hidden shadow-2xl relative border-8 border-white">
+                <div className="aspect-square rounded-[4rem] bg-slate-200 overflow-hidden shadow-2xl relative border-8 border-white">
                   <img 
                     src={profile.profileImage} 
                     alt={profile.name}
@@ -370,26 +349,26 @@ export default function App() {
                   />
                 </div>
                 
-                {/* Badge Pengalaman - Diposisikan agar tidak menghalangi wajah */}
+                {/* Badge Pengalaman - Diperkecil signifikan dan diposisikan di pojok agar tidak menutupi foto */}
                 <motion.div 
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.8 }}
-                  className="absolute -right-4 bottom-12 bg-white p-3 md:p-4 rounded-2xl shadow-2xl flex items-center gap-3 md:gap-4 border border-slate-100 z-20"
+                  className="absolute -right-2 -bottom-2 bg-white p-1.5 md:p-2 rounded-xl shadow-lg flex items-center gap-2 border border-slate-100 z-20 whitespace-nowrap"
                 >
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-amber-100 rounded-xl flex items-center justify-center">
-                    <Trophy className="w-5 h-5 md:w-6 md:h-6 text-amber-600" />
+                  <div className="w-7 h-7 md:w-9 md:h-9 bg-amber-100 rounded-lg flex items-center justify-center">
+                    <Trophy className="w-3.5 h-3.5 md:w-4.5 md:h-4.5 text-amber-600" />
                   </div>
-                  <div className="text-left">
-                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Pengalaman</p>
-                    <p className="text-base md:text-lg font-extrabold text-slate-900">7+ Tahun</p>
+                  <div className="text-left pr-1">
+                    <p className="text-[7px] font-bold text-slate-400 uppercase tracking-wider leading-none">Pengalaman</p>
+                    <p className="text-[10px] md:text-xs font-extrabold text-slate-900 leading-tight">7+ Tahun</p>
                   </div>
                 </motion.div>
               </div>
 
               {/* Elemen Dekoratif */}
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 md:w-32 md:h-32 bg-slate-900 rounded-full -z-0 opacity-10 blur-2xl" />
-              <div className="absolute -top-6 -right-6 w-32 h-32 md:w-48 md:h-48 border-4 border-amber-200 rounded-full -z-0" />
+              <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-slate-900 rounded-full -z-0 opacity-10 blur-3xl" />
+              <div className="absolute -top-10 -right-10 w-40 h-40 border-4 border-amber-200 rounded-[4rem] -z-0 opacity-50" />
             </motion.div>
           </div>
         </div>
@@ -569,7 +548,7 @@ export default function App() {
             Pengalaman Kerja
           </SectionHeading>
 
-          <div className="relative space-y-8 md:space-y-12">
+          <div className="relative space-y-12 md:space-y-12">
             {/* Timeline line */}
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-slate-200 transform md:-translate-x-1/2" />
             
@@ -580,26 +559,24 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className={`relative flex flex-col md:flex-row gap-8 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+                className={`relative flex flex-col md:flex-row gap-4 md:gap-8 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
               >
                 {/* Timeline dot */}
                 <div className="absolute left-4 md:left-1/2 top-0 w-4 h-4 bg-amber-600 rounded-full border-4 border-white transform -translate-x-1/2 z-10" />
                 
                 <div className="pl-10 md:pl-0 md:w-1/2">
                   <div className={`bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100 hover:shadow-xl hover:shadow-slate-100 transition-all ${index % 2 === 0 ? 'md:ml-8' : 'md:mr-8'}`}>
-                    <div className="flex flex-wrap justify-between items-start gap-4 mb-4">
-                      <div>
-                        <span className="text-amber-600 font-bold text-sm uppercase tracking-wider">{exp.period}</span>
-                        <h3 className="text-xl md:text-2xl font-bold text-slate-900 mt-1">{exp.role}</h3>
-                        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-slate-500 font-medium mt-1 text-sm">
-                          <div className="flex items-center gap-1">
-                            <Briefcase className="w-4 h-4" />
-                            <span>{exp.company}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <MapPin className="w-4 h-4" />
-                            <span>{exp.location}</span>
-                          </div>
+                    <div className="flex flex-col mb-4">
+                      <span className="text-amber-600 font-bold text-xs md:text-sm uppercase tracking-wider">{exp.period}</span>
+                      <h3 className="text-lg md:text-2xl font-bold text-slate-900 mt-1">{exp.role}</h3>
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-slate-500 font-medium mt-2 text-xs md:text-sm">
+                        <div className="flex items-center gap-1.5">
+                          <Briefcase className="w-4 h-4 text-slate-400" />
+                          <span>{exp.company}</span>
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                          <MapPin className="w-4 h-4 text-slate-400" />
+                          <span>{exp.location}</span>
                         </div>
                       </div>
                     </div>
@@ -624,7 +601,7 @@ export default function App() {
             <div className="h-1.5 w-16 bg-amber-600 mt-4 rounded-full mx-auto md:mx-0" />
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {profile.education.map((edu, index) => (
               <motion.div
                 key={edu.school}
@@ -632,17 +609,17 @@ export default function App() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all"
+                className="bg-white/5 backdrop-blur-sm p-6 md:p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all"
               >
-                <div className="w-12 h-12 bg-amber-600 rounded-xl flex items-center justify-center mb-6">
-                  <GraduationCap className="w-6 h-6 text-white" />
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-amber-600 rounded-xl flex items-center justify-center mb-6">
+                  <GraduationCap className="w-5 h-5 md:w-6 md:h-6 text-white" />
                 </div>
-                <span className="text-amber-500 font-bold text-sm">{edu.period}</span>
-                <h3 className="text-xl font-bold mt-2 mb-1">{edu.school}</h3>
-                <p className="text-slate-300 font-medium mb-4">{edu.major}</p>
-                <div className="space-y-2 text-sm text-slate-400">
+                <span className="text-amber-500 font-bold text-xs md:text-sm">{edu.period}</span>
+                <h3 className="text-lg md:text-xl font-bold mt-2 mb-1">{edu.school}</h3>
+                <p className="text-slate-300 font-medium mb-4 text-sm md:text-base">{edu.major}</p>
+                <div className="space-y-2 text-xs md:text-sm text-slate-400">
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4" />
+                    <MapPin className="w-4 h-4 text-slate-500" />
                     <span>{edu.location}</span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -812,10 +789,10 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="text-xl md:text-2xl font-bold text-slate-900 tracking-tighter">
-              UMAR <span className="text-amber-600">FAKHRUDIN.</span>
+              {profile.name.split(' ')[0]} <span className="text-amber-600">{profile.name.split(' ').slice(1).join(' ')}.</span>
             </div>
             <div className="text-slate-500 text-sm font-medium">
-              © {new Date().getFullYear()} Umar Fakhrudin. Hak cipta dilindungi undang-undang.
+              © {new Date().getFullYear()} {profile.name}. Hak cipta dilindungi undang-undang.
             </div>
             <div className="flex gap-4">
               <a 
