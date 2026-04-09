@@ -349,19 +349,19 @@ export default function App() {
                   />
                 </div>
                 
-                {/* Badge Pengalaman - Diperkecil signifikan dan diposisikan di pojok agar tidak menutupi foto */}
+                {/* Badge Pengalaman - Diposisikan di samping foto agar tidak menutupi visual utama */}
                 <motion.div 
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.8 }}
-                  className="absolute -right-2 -bottom-2 bg-white p-1.5 md:p-2 rounded-xl shadow-lg flex items-center gap-2 border border-slate-100 z-20 whitespace-nowrap"
+                  className="absolute -left-6 top-12 bg-white p-2 md:p-3 rounded-2xl shadow-xl flex items-center gap-2 md:gap-3 border border-slate-100 z-20 whitespace-nowrap"
                 >
-                  <div className="w-7 h-7 md:w-9 md:h-9 bg-amber-100 rounded-lg flex items-center justify-center">
-                    <Trophy className="w-3.5 h-3.5 md:w-4.5 md:h-4.5 text-amber-600" />
+                  <div className="w-8 h-8 md:w-10 md:h-10 bg-amber-100 rounded-xl flex items-center justify-center">
+                    <Trophy className="w-4 h-4 md:w-5 md:h-5 text-amber-600" />
                   </div>
-                  <div className="text-left pr-1">
-                    <p className="text-[7px] font-bold text-slate-400 uppercase tracking-wider leading-none">Pengalaman</p>
-                    <p className="text-[10px] md:text-xs font-extrabold text-slate-900 leading-tight">7+ Tahun</p>
+                  <div className="text-left">
+                    <p className="text-[8px] font-bold text-slate-400 uppercase tracking-wider">Pengalaman</p>
+                    <p className="text-xs md:text-sm font-extrabold text-slate-900">7+ Tahun</p>
                   </div>
                 </motion.div>
               </div>
@@ -507,9 +507,14 @@ export default function App() {
                 key={skill.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -5,
+                  boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)" 
+                }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 group hover:border-amber-200 transition-all"
+                className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 group hover:border-amber-200 transition-all cursor-default"
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className="p-3 bg-slate-50 rounded-xl group-hover:bg-amber-50 transition-colors">
