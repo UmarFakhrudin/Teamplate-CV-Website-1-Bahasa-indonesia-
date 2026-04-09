@@ -454,12 +454,12 @@ export default function App() {
                   />
                 </div>
                 
-                {/* Badge Pengalaman - Diposisikan di samping foto agar tidak menutupi visual utama */}
+                {/* Badge Pengalaman - Diposisikan di bawah foto agar tidak menutupi wajah */}
                 <motion.div 
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20, x: '-50%' }}
+                  animate={{ opacity: 1, y: 0, x: '-50%' }}
                   transition={{ delay: 0.8 }}
-                  className={`absolute -left-6 top-12 p-2 md:p-3 rounded-2xl shadow-xl flex items-center gap-2 md:gap-3 border z-20 whitespace-nowrap transition-colors duration-500 ${isDarkMode ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-100'}`}
+                  className={`absolute -bottom-6 left-1/2 p-2 md:p-3 rounded-2xl shadow-xl flex items-center gap-2 md:gap-3 border z-20 whitespace-nowrap transition-colors duration-500 ${isDarkMode ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-100'}`}
                 >
                   <div className={`w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center transition-colors ${isDarkMode ? 'bg-amber-900/30' : 'bg-amber-100'}`}>
                     <Trophy className="w-4 h-4 md:w-5 md:h-5 text-amber-600" />
